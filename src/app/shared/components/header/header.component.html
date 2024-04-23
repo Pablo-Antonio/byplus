@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="bkButton"  defaultHref="/" icon="../../../assets/icon/flecha-back.svg"  text=""></ion-back-button>
+    </ion-buttons>
+    <ion-img *ngIf="bkButton" slot="end" class="ion-margin-end"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<style>
+  ion-toolbar {
+    --opacity: 0;
+  }
+
+  ion-back-button {
+    --background: transparent;
+    --color: white;
+    --height: 50px;
+    --width: 50px;
+    --border-radius: 5px;
+  }
+
+</style>

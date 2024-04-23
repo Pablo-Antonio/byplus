@@ -1,0 +1,105 @@
+<app-header [bkButton]="false"></app-header>
+
+<ion-content fullscreen="true">
+  <div style="padding: 0px 10px;">
+    <img src="../../../assets/img/logo svg.svg" height="200px" alt="">
+  </div>
+
+  <div style="text-align: center">
+    <app-page-title [title]="title"></app-page-title>
+  </div>
+
+  <!--<ion-list>
+
+    <ion-item routerLink="/balance" detail>
+      <ion-icon slot="start" name="bar-chart" color="primary"></ion-icon>
+      Consulta de Saldo
+    </ion-item>
+
+    <ion-item (click)="openAdd()" detail>
+      <ion-icon slot="start" name="reload-circle" color="primary"></ion-icon>
+      Recargar Plan
+    </ion-item>
+
+    <ion-item *ngFor="let page of pages" [routerLink]="page.redirectTo" detail>
+      <ion-icon slot="start" [name]="page.icon" color="primary"></ion-icon>
+      {{page.name | titlecase}}
+    </ion-item>
+
+  </ion-list>-->
+
+  <ion-button [routerLink]="['/balance']" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" name="bar-chart"></ion-icon>
+      Consulta tu saldo
+    </div>
+  </ion-button>
+
+  <ion-button (click)="openAdd()" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" name="reload-circle"></ion-icon>
+      Recargar plan
+    </div>
+  </ion-button>
+
+  <ion-button *ngFor="let page of pages" [routerLink]="page.redirectTo" expand="block" color="white">
+    <div class="text_left">
+      <ion-icon slot="start" [name]="page.icon"></ion-icon>
+      {{page.name | titlecase}}
+    </div>
+  </ion-button>
+
+</ion-content>
+
+<app-footer></app-footer>
+
+<style>
+  * {
+    color: #000;
+  }
+
+  ion-button {
+    margin: 0;
+    padding: 8px 0;
+    height: auto;
+    font-size: 17px;
+  }
+
+  .text_left {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+  }
+
+  .text_left ion-icon {
+    margin-right: 8px;
+    font-size: small;
+  }
+
+  .text_end {
+    width: 100%;
+    position: absolute;
+    top: 83%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 300;
+    font-size: small;
+  }
+
+  .row a {
+    color: rgba(255, 255, 255, 0.603);
+    text-decoration: none;
+    font-size: small;
+    margin-right: 10px;
+  }
+
+  .row img {
+    margin-right: 10px;
+  }
+</style>
